@@ -1,0 +1,127 @@
+*{
+  box-sizing: border-box;
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+  -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+
+
+
+html {
+  font-size: 1.2vmax;
+  background: url(img/neon_nights_by_markbizkit_ddnscdi.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  
+}
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+
+body{
+  background-color: rgba(22, 22, 22, 0.493);
+  
+}
+
+
+
+.keys {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+ 
+}
+
+.key {
+  outline: none;
+  position: relative;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .7s ease;
+  width: 5rem;
+  z-index: 0;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 .5rem black;
+}
+.key:before{
+  content:'';
+  background: linear-gradient(135deg, blue, red, yellow,green,violet, orange,crimson,skyblue, peru, magenta, cyan );
+  position: absolute;
+  top:-2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  width: 102%;
+  height: 102%;
+  filter: blur(9px);
+  animation:moving-gradient 8s linear infinite;
+  border-radius: 10px;
+}
+
+.key:after{
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(img/neon_nights_by_markbizkit_ddnscdi.jpg);
+  background-position: top center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  left:0;
+  top:0;
+  border-radius: .6rem;
+  box-shadow: 0px 0px 30px inset rgba(0, 0, 0, 0.8)
+}
+
+
+
+@keyframes moving-gradient {
+  0%{
+    background-position: 0 0;
+    opacity:1;
+  }
+  50%{
+    background-position: 250% 0;
+  }
+
+  100%{
+    background-position: 0 0;
+    opacity:1;
+  }
+}
+
+
+.playing {
+  transform: scale(3) rotate(360deg);
+  z-index: 10;
+  position: absolute;
+  top: 30vh;
+  left: 45vw;
+}
+
+kbd {
+  display: flex;
+  font-size: 4rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
